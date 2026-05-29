@@ -37,13 +37,13 @@ header p{
   color:#5f6f86;
 }
 
-/* tabs */
+/* Tabs */
 
 .tabs{
   display:flex;
   justify-content:center;
   gap:14px;
-  margin:28px 0;
+  margin:24px 0;
 }
 
 .tab-btn{
@@ -63,7 +63,31 @@ header p{
   color:#fff;
 }
 
-/* grid */
+/* Search */
+
+.search-box{
+  display:flex;
+  justify-content:center;
+  margin:10px 20px 28px;
+}
+
+.search-box input{
+  width:min(420px,92%);
+  padding:14px 18px;
+  border:none;
+  border-radius:16px;
+  outline:none;
+  font-size:1rem;
+  background:#fff;
+  color:#18202a;
+  box-shadow:0 8px 20px rgba(33,72,126,.08);
+}
+
+.search-box input::placeholder{
+  color:#8a98ab;
+}
+
+/* Grid */
 
 .container{
   max-width:1350px;
@@ -77,7 +101,7 @@ header p{
   gap:28px;
 }
 
-/* cards */
+/* Cards */
 
 .card{
   background:#fff;
@@ -110,7 +134,7 @@ header p{
   color:#18202a;
 }
 
-/* modal */
+/* Modal */
 
 .modal{
   position:fixed;
@@ -153,28 +177,6 @@ header p{
   color:#fff;
   cursor:pointer;
 }
-
-.search-box{
-  display:flex;
-  justify-content:center;
-  margin:10px 20px 28px;
-}
-
-.search-box input{
-  width:min(420px,92%);
-  padding:14px 18px;
-  border:none;
-  border-radius:16px;
-  outline:none;
-  font-size:1rem;
-  background:#fff;
-  color:#18202a;
-  box-shadow:0 8px 20px rgba(33,72,126,.08);
-}
-
-.search-box input::placeholder{
-  color:#8a98ab;
-}
 </style>
 </head>
 <body>
@@ -183,6 +185,19 @@ header p{
   <h1>Men of Screen</h1>
   <p>Television & Movie Portfolio Showcase</p>
 </header>
+
+<!-- Tabs -->
+<div class="tabs">
+  <button class="tab-btn active" onclick="showTab('tv',this)">
+    Television
+  </button>
+
+  <button class="tab-btn" onclick="showTab('bollywood',this)">
+    Bollywood
+  </button>
+</div>
+
+<!-- Search -->
 <div class="search-box">
   <input
     type="text"
@@ -195,15 +210,23 @@ header p{
 <div class="container">
 
   <div id="tv" class="grid"></div>
-  <div id="bollywood" class="grid" style="display:none;"></div>
+
+  <div
+    id="bollywood"
+    class="grid"
+    style="display:none;"
+  ></div>
 
 </div>
 
 <!-- Modal -->
+
 <div class="modal" id="modal">
   <span class="close" onclick="closeModal()">&times;</span>
+
   <div class="modal-content">
     <img id="modalImg" src="">
+
     <div class="modal-body">
       <h2 id="modalTitle"></h2>
     </div>
@@ -228,9 +251,9 @@ const tvActors=[
 {name:"Kunal Singh",img:"kunal.jpg"},
 {name:"Vijayendra Kumeria",img:"vijayendra.jpeg"},
 {name:"Mohit Malik",img:"mohit.jpg"},
-  {name:"Karan Tacker",img:"karant.jpg"},
-  {name:"Vishal Singh",img:"vishal.jpg"},
-  {name:"Vivek Dahiya",img:"vivek.jpg"}
+{name:"Karan Tacker",img:"karant.jpg"},
+{name:"Vishal Singh",img:"vishal.jpg"},
+{name:"Vivek Dahiya",img:"vivek.jpg"}
 ];
 
 const movieActors=[
@@ -243,26 +266,47 @@ const movieActors=[
 {name:"Lakshya",img:"lakshya.jpg"},
 {name:"Varun Dhawan",img:"varun.jpg"},
 {name:"Kartik Aaryan",img:"kartik.jpg"},
-{name:"Tiger Shroff",img:"tiger.jpg"},
+{name:"Tiger Shroff",img:"tiger.jpg"}
 ];
 
-function createCards(data,id,category){
+function createCards(data,id){
   const box=document.getElementById(id);
 
   box.innerHTML=data.map(actor=>`
     <div class="card"
-      onclick="openModal('${actor.name}','${actor.img}','${category}')">
+      onclick="openModal('${actor.name}','${actor.img}')">
 
       <img src="${actor.img}" alt="${actor.name}">
+
       <div class="card-content">
         <h3>${actor.name}</h3>
       </div>
+
     </div>
   `).join('');
 }
 
-createCards(tvActors,"tv","Television");
-createCards(movieActors,"movie","Movie");
+createCards(tvActors,"tv");
+createCards(movieActors,"bollywood");
+
+function showTab(tabId,btn){
+
+  document.getElementById("tv").style.display="none";
+  document.getElementById("bollywood").style.display="none";
+
+  document.getElementById(tabId).style.display="grid";
+
+  document
+    .querySelectorAll(".tab-btn")
+    .forEach(tab=>{
+      tab.classList.remove("active");
+    });
+
+  btn.classList.add("active");
+
+  document.getElementById("searchInput").value="";
+  searchActors();
+}
 
 function openModal(name,img){
   document.getElementById("modal").style.display="flex";
@@ -281,20 +325,27 @@ window.onclick=function(e){
 }
 
 function searchActors(){
-  const value =
+
+  const value=
     document.getElementById("searchInput")
       .value
       .toLowerCase();
 
-  document
+  const activeGrid=
+    document.getElementById("tv").style.display==="grid"
+      ? document.getElementById("tv")
+      : document.getElementById("bollywood");
+
+  activeGrid
     .querySelectorAll(".card")
     .forEach(card=>{
-      const name =
+
+      const name=
         card.querySelector("h3")
           .innerText
           .toLowerCase();
 
-      card.style.display =
+      card.style.display=
         name.includes(value)
           ? "block"
           : "none";
