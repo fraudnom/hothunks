@@ -85,7 +85,8 @@ const tvActors=[
 {name:"Zayn Ibad Khan",img:"zaynibad.jpeg"},
 {name:"Sehban Azim",img:"sehban.jpg"},
 {name:"Shaheer Shaikh",img:"shaheer.jpeg"},
-{name:"Akshit Sukhija",img:"akshit.jpeg"}];
+{name:"Akshit Sukhija",img:"akshit.jpeg"}],
+{name:"Vin Rana",img:"vinrana.jpg"}];
 
 const bollywoodActors=[
 {name:"Ranbir Kapoor",img:"ranbir.jpeg"},
@@ -101,24 +102,15 @@ const bollywoodActors=[
 
 const hollywoodActors=[
 {name:"Henry Cavill",img:"henry.jpg"},
-{name:"Chris Hemsworth",img:"chris.jpg"},
-{name:"Tom Cruise",img:"tom.jpg"},
-{name:"Chris Evans",img:"evans.jpg"},
-{name:"Ryan Reynolds",img:"ryan.jpg"}];
+{name:"Chris Hemsworth",img:"chrishemsworth.jpg"},
+{name:"Ryan Gosling",img:"ryangosling.jpg"}];
 
 const tollywoodActors=[
-{name:"Mahesh Babu",img:"mahesh.jpg"},
-{name:"Allu Arjun",img:"allu.jpg"},
-{name:"Prabhas",img:"prabhas.jpg"},
 {name:"Ram Charan",img:"ramcharan.jpg"},
 {name:"NTR Jr.",img:"ntr.jpg"}];
 
 const kollywoodActors=[
-{name:"Vijay",img:"vijay.jpg"},
-{name:"Ajith Kumar",img:"ajith.jpg"},
-{name:"Suriya",img:"suriya.jpg"},
-{name:"Sivakarthikeyan",img:"sk.jpg"},
-{name:"Dhanush",img:"dhanush.jpg"}];
+{name:"Vishnu Vishal",img:"vishnuvishal.jpg"}];
 
 function createCards(data,id){
 document.getElementById(id).innerHTML=data.map(a=>`<div class="card" onclick="openModal('${a.name}','${a.img}')"><img src="${a.img}" alt="${a.name}"><div class="card-content"><h3>${a.name}</h3></div></div>`).join('');
