@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Male Model Portfolio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,sans-serif;background:linear-gradient(135deg,#edf4ff,#f8fbff);color:#18202a}
+header{text-align:center;padding:50px 20px 18px}
+header h1{font-family:'DM Serif Display',serif;font-size:3rem}
+header p{margin-top:8px;color:#5f6f86}
+.tabs{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:24px 0}
+.tab-btn{border:none;background:#fff;color:#4d5f77;padding:12px 24px;border-radius:40px;font-weight:600;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+.tab-btn.active{background:#2f6fed;color:#fff}
+.search-box{display:flex;justify-content:center;margin:10px 20px 28px}
+.search-box input{width:min(420px,92%);padding:14px 18px;border:none;border-radius:16px;outline:none;background:#fff;box-shadow:0 8px 20px rgba(33,72,126,.08)}
+.container{max-width:1350px;margin:auto;padding:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px}
+.card{background:#fff;border-radius:24px;overflow:hidden;cursor:pointer;transition:.25s;box-shadow:0 10px 24px rgba(33,72,126,.08)}
+.card:hover{transform:translateY(-6px)}
+.card img{width:100%;aspect-ratio:3/5;object-fit:cover}
+.card-content{padding:16px;text-align:center}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;justify-content:center;align-items:center}
+.modal-content{background:#fff;width:min(350px,92%);border-radius:24px;overflow:hidden}
+.modal img{width:100%;aspect-ratio:3/5;object-fit:cover}
+.modal-body{padding:18px;text-align:center}
+.modal-body h2{font-family:'DM Serif Display',serif}
+.close{position:absolute;top:18px;right:24px;font-size:30px;color:#fff;cursor:pointer}
+</style>
+</head>
+<body>
+<header><h1>Men of Screen</h1><p>Television & Movie Portfolio Showcase</p></header>
+
+<div class="tabs">
+<button class="tab-btn active" onclick="showTab('tv',this)">Television</button>
+<button class="tab-btn" onclick="showTab('bollywood',this)">Bollywood</button>
+<button class="tab-btn" onclick="showTab('hollywood',this)">Hollywood</button>
+<button class="tab-btn" onclick="showTab('tollywood',this)">Tollywood</button>
+<button class="tab-btn" onclick="showTab('kollywood',this)">Kollywood</button>
+</div>
+
+<div class="search-box"><input id="searchInput" type="text" placeholder="Search actors..." onkeyup="searchActors()"></div>
+
+<div class="container">
+<div id="tv" class="grid"></div>
+<div id="bollywood" class="grid" style="display:none"></div>
+<div id="hollywood" class="grid" style="display:none"></div>
+<div id="tollywood" class="grid" style="display:none"></div>
+<div id="kollywood" class="grid" style="display:none"></div>
+</div>
+
+<div class="modal" id="modal">
+<span class="close" onclick="closeModal()">&times;</span>
+<div class="modal-content">
+<img id="modalImg" src="">
+<div class="modal-body"><h2 id="modalTitle"></h2></div>
+</div>
+</div>
+
+<script>
+const tvActors=[
+{name:"Arjun Bijlani",img:"arjun.avif"},
+{name:"Akshay Bindra",img:"akshay.jpg"},
+{name:"Savi Thakur",img:"savi.jpg"},
+{name:"Simba Nagpal",img:"simba.jpg"},
+{name:"Gautam Rode",img:"gautam.jpg"},
+{name:"Parth Samthaan",img:"parth.jpg"},
+{name:"Pratik Sehajpal",img:"pratik.jpg"},
+{name:"Namik Paul",img:"namik.jpg"},
+{name:"Adhvik Mahajan",img:"adhvik.jpg"},
+{name:"Rohan Mehra",img:"rohan.jpg"},
+{name:"Arjit Taneja",img:"arjit.jpg"},
+{name:"Karan Wahi",img:"karan.jpg"},
+{name:"Kunal Singh",img:"kunal.jpg"},
+{name:"Vijayendra Kumeria",img:"vijayendra.jpeg"},
+{name:"Mohit Malik",img:"mohit.jpg"},
+{name:"Karan Tacker",img:"karant.jpg"},
+{name:"Vishal Singh",img:"vishal.jpg"},
+{name:"Vivek Dahiya",img:"vivek.jpg"},
+{name:"Kanwar Dhillon",img:"kanwar.jpeg"},
+{name:"Shagun Pandey",img:"shagun.jpeg"},
+{name:"Paras Arora",img:"paras.jpeg"},
+{name:"Zayn Ibad Khan",img:"zaynibad.jpeg"},
+{name:"Sehban Azim",img:"sehban.jpg"},
+{name:"Shaheer Shaikh",img:"shaheer.jpeg"},
+{name:"Akshit Sukhija",img:"akshit.jpeg"}];
+
+const bollywoodActors=[
+{name:"Ranbir Kapoor",img:"ranbir.jpeg"},
+{name:"Ranveer Singh",img:"ranveer.jpeg"},
+{name:"Sunny Kaushal",img:"sunny.jpeg"},
+{name:"Sidharth Malhotra",img:"sidharth.jpg"},
+{name:"Lakshya",img:"lakshya.jpg"},
+{name:"Varun Dhawan",img:"varun.jpg"},
+{name:"Kartik Aaryan",img:"kartik.jpeg"},
+{name:"Tiger Shroff",img:"tiger.jpeg"},
+{name:"Ahaan Panday",img:"ahaan.png"},
+{name:"Ishaan Khatter",img:"ishaan.png"}];
+
+const hollywoodActors=[
+{name:"Henry Cavill",img:"henry.jpg"},
+{name:"Chris Hemsworth",img:"chris.jpg"},
+{name:"Tom Cruise",img:"tom.jpg"},
+{name:"Chris Evans",img:"evans.jpg"},
+{name:"Ryan Reynolds",img:"ryan.jpg"}];
+
+const tollywoodActors=[
+{name:"Mahesh Babu",img:"mahesh.jpg"},
+{name:"Allu Arjun",img:"allu.jpg"},
+{name:"Prabhas",img:"prabhas.jpg"},
+{name:"Ram Charan",img:"ramcharan.jpg"},
+{name:"NTR Jr.",img:"ntr.jpg"}];
+
+const kollywoodActors=[
+{name:"Vijay",img:"vijay.jpg"},
+{name:"Ajith Kumar",img:"ajith.jpg"},
+{name:"Suriya",img:"suriya.jpg"},
+{name:"Sivakarthikeyan",img:"sk.jpg"},
+{name:"Dhanush",img:"dhanush.jpg"}];
+
+function createCards(data,id){
+document.getElementById(id).innerHTML=data.map(a=>`<div class="card" onclick="openModal('${a.name}','${a.img}')"><img src="${a.img}" alt="${a.name}"><div class="card-content"><h3>${a.name}</h3></div></div>`).join('');
+}
+createCards(tvActors,"tv");
+createCards(bollywoodActors,"bollywood");
+createCards(hollywoodActors,"hollywood");
+createCards(tollywoodActors,"tollywood");
+createCards(kollywoodActors,"kollywood");
+
+function showTab(id,btn){
+document.querySelectorAll('.grid').forEach(g=>g.style.display='none');
+document.getElementById(id).style.display='grid';
+document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+btn.classList.add('active');
+document.getElementById('searchInput').value='';
+searchActors();
+}
+function openModal(n,i){modal.style.display='flex';modalImg.src=i;modalTitle.innerText=n;}
+function closeModal(){modal.style.display='none';}
+window.onclick=e=>{if(e.target.id==='modal')closeModal();}
+function searchActors(){
+const v=searchInput.value.toLowerCase();
+const active=[...document.querySelectorAll('.grid')].find(g=>g.style.display==='grid');
+active.querySelectorAll('.card').forEach(c=>{
+c.style.display=c.querySelector('h3').innerText.toLowerCase().includes(v)?'block':'none';
+});
+}
+</script>
+</body>
+</html>
