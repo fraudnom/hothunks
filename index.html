@@ -39,6 +39,8 @@ header p{margin-top:8px;color:#5f6f86}
 <button class="tab-btn" onclick="showTab('hollywood',this)">Hollywood</button>
 <button class="tab-btn" onclick="showTab('tollywood',this)">Tollywood</button>
 <button class="tab-btn" onclick="showTab('kollywood',this)">Kollywood</button>
+<button class="tab-btn" onclick="showTab('sandalwood',this)">Sandalwood</button>
+<button class="tab-btn" onclick="showTab('mollywood',this)">Mollywood</button>
 </div>
 
 <div class="search-box"><input id="searchInput" type="text" placeholder="Search actors..." onkeyup="searchActors()"></div>
@@ -49,6 +51,8 @@ header p{margin-top:8px;color:#5f6f86}
 <div id="hollywood" class="grid" style="display:none"></div>
 <div id="tollywood" class="grid" style="display:none"></div>
 <div id="kollywood" class="grid" style="display:none"></div>
+<div id="sandalwood" class="grid" style="display:none"></div>
+<div id="mollywood" class="grid" style="display:none"></div>
 </div>
 
 <div class="modal" id="modal">
@@ -99,8 +103,12 @@ const bollywoodActors=[
 {name:"Kartik Aaryan",img:"kartik.jpeg"},
 {name:"Tiger Shroff",img:"tiger.jpeg"},
 {name:"Ahaan Panday",img:"ahaan.png"},
-{name:"Ishaan Khatter",img:"ishaan.png"}];
-
+{name:"Ishaan Khatter",img:"ishaan.png"},
+{name:"Aditya Roy Kapoor",img:"adityaroy.jpeg"},
+{name:"John Abraham",img:"john.jpeg"},
+{name:"Hrithik Roshan",img:"hritik.jpeg"},
+{name:"Ibrahim Ali Khan",img:"ibrahim.jpeg"}];
+  
 const hollywoodActors=[
 {name:"Henry Cavill",img:"henry.jpg"},
 {name:"Chris Hemsworth",img:"chrishemsworth.jpg"},
@@ -108,11 +116,26 @@ const hollywoodActors=[
 
 const tollywoodActors=[
 {name:"Ram Charan",img:"ramcharan.jpg"},
-{name:"NTR Jr.",img:"ntr.jpg"}];
+{name:"NTR Jr.",img:"ntr.jpg"},
+{name:"Karthikeya Gummakonda",img:"karthikeya.jpeg"},
+{name:"Vijay Deverakonda",img:"vijayd.jpeg"},
+{name:"Allu Arjun",img:"alluarjun.jpeg"},
+{name:"Prabhas",img:"prabhas.jpeg"},
+{name:"Naga Chaitanya",img:"nagachaitanya.jpeg"},
+{name:"Akhil Akkineni",img:"akhil.jpeg"}];
 
 const kollywoodActors=[
-{name:"Vishnu Vishal",img:"vishnuvishal.jpg"}];
+{name:"Vishnu Vishal",img:"vishnuvishal.jpg"},
+{name:"Aarya",img:"vishnuvishal.jpg"},
+{name:"Suriya",img:"suriya.jpeg"}];
 
+const sandalwoodActors=[
+{name:"Yash",img:"yash.jpeg"},
+{name:"Deekshith Shetty", img:"deekshith.jpeg"}];
+
+const mollywoodActors=[
+{name:"Unni Mukundan",img:"vishnuvishal.jpg"}];
+  
 function createCards(data,id){
 document.getElementById(id).innerHTML=data.map(a=>`<div class="card" onclick="openModal('${a.name}','${a.img}')"><img src="${a.img}" alt="${a.name}"><div class="card-content"><h3>${a.name}</h3></div></div>`).join('');
 }
