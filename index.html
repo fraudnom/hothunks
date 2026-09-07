@@ -126,7 +126,7 @@ const tollywoodActors=[
 
 const kollywoodActors=[
 {name:"Vishnu Vishal",img:"vishnuvishal.jpg"},
-{name:"Aarya",img:"vishnuvishal.jpg"},
+{name:"Aarya",img:"aarya.webp"},
 {name:"Suriya",img:"suriya.jpeg"}];
 
 const sandalwoodActors=[
@@ -135,7 +135,7 @@ const sandalwoodActors=[
 {name:"Sudeep",img: "sudeep.jpeg"}];
 
 const mollywoodActors=[
-{name:"Unni Mukundan",img:"vishnuvishal.jpg"}];
+{name:"Unni Mukundan",img:"unni.jpeg"}];
   
 function createCards(data,id){
 document.getElementById(id).innerHTML=data.map(a=>`<div class="card" onclick="openModal('${a.name}','${a.img}')"><img src="${a.img}" alt="${a.name}"><div class="card-content"><h3>${a.name}</h3></div></div>`).join('');
