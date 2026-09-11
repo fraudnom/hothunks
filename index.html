@@ -309,6 +309,11 @@ header p{
         South Indian TV
     </button>
 
+    <button class="tab-btn"
+            onclick="showTab('influencers',this)">
+        Influencers
+    </button>
+
 </div>
 
 
@@ -409,6 +414,13 @@ header p{
          style="display:none">
     </div>
 
+    <!-- ================= INFLUENCERS ================= -->
+
+    <div id="influencers"
+         class="grid"
+         style="display:none">
+    </div>
+
 </div>
 
 
@@ -495,8 +507,8 @@ const tvActors = [
     {name:"Aasim Khan",img:"aasim.jpeg"},
     {name:"Avinash Sharma",img:"avinashsharma.webp"},
     {name:"Shashank Vyas",img:"shashank.jpeg"},
-    {name:"Abhishek Kumar",img:"abhishekkumar.heic"},
-    {name:"Vishal Aditya Singh",img:"vishaladitya.heic"},
+    {name:"Abhishek Kumar",img:"abhishekkumar.jpg"},
+    {name:"Vishal Aditya Singh",img:"vishaladitya.jpg"},
     {name:"Karanveer Sharma",img:"karanveer.jpg"},
     {name:"Rohit Purohit",img:"rohitpurohit.jpg"},
     {name:"Shoaib Ibrahim",img:"shoaib.jpg"},
@@ -542,7 +554,7 @@ const bollywoodActors = [
     {name:"Gurfateh Pirzada",img:"gurfateh.jpeg"},
     {name:"Vidyut Jammwal",img:"vidyut.jpeg"},
     {name:"Arjun Kapoor",img:"arjunkapoor.jpg"},
-    {name:"Arjun Rampal",img:"arjunrampal.heic"},
+    {name:"Arjun Rampal",img:"arjunrampal.jpg"},
     {name:"Siddhant Chaturvedi",img:"sidhantchaturvedi.jpg"}
 
 ];
@@ -558,7 +570,7 @@ const hollywoodActors = [
     {name:"Henry Cavill",img:"henry.jpg"},
     {name:"Chris Hemsworth",img:"chrishemsworth.jpg"},
     {name:"Ryan Gosling",img:"ryangosling.jpg"},
-    {name:"Tom Holland",img:"tomholland.heic"}
+    {name:"Tom Holland",img:"tomholland.jpg"}
 
 ];
 
@@ -585,7 +597,7 @@ const tollywoodActors = [
     {name:"Sudheer Babu",img:"sudheerbabu.jpg"},
     {name:"Sundeep Kishan",img:"sundeep.jpg"},
     {name:"Prince Cecil",img:"prince.jpg"},
-    {name:"Adarsh Balakrishna",img:"adarshbalakrishna.heic"}
+    {name:"Adarsh Balakrishna",img:"adarshbalakrishna.jpg"}
 
 ];
 
@@ -598,7 +610,7 @@ const tollywoodActors = [
 const kollywoodActors = [
 
     {name:"Vishnu Vishal",img:"vishnuvishal.jpg"},
-    {name:"Arya",img:"aarya.jpeg"},
+    {name:"Arya",img:"arya.jpeg"},
     {name:"Vikram",img:"vikram.jpg"},
     {name:"Suriya",img:"suriya.jpeg"},
     {name:"R. Madhavan",img:"madhavan.jpg"},
@@ -618,7 +630,7 @@ const kollywoodActors = [
 const sandalwoodActors = [
 
     {name:"Yash",img:"yash.jpeg"},
-    {name:"Rakshit Shetty",img:"raskhitshetty.jpg"},
+    {name:"Rakshit Shetty",img:"rakshitshetty.jpg"},
     {name:"Dileep Shetty",img:"dileep.jpeg"},
     {name:"Sudeep",img:"sudeep.jpeg"}
 
@@ -646,7 +658,7 @@ const mollywoodActors = [
 const indianWebActors = [
 
     {name:"Rohit Saraf",img:"rohitsaraf.jpg"},
-    {name:"Ayush Mehra",img:"ayush.heic"}
+    {name:"Ayush Mehra",img:"ayush.jpg"}
 
 ];
 
@@ -681,11 +693,24 @@ const southTVActors = [
     {name:"Vishwa",img:"vishwa.jpg"},
     {name:"Satya",img:"satya.jpg"},
     {name:"Arjun Ambati",img:"arjunambati.jpg"},
-    {name:"Mukesh Gowda",img:"mukeshgowda.jpg"}
+    {name:"Mukesh Gowda",img:"mukeshgowda.jpg"},
+    {name:"Jay DSouza",img:"jaydsouza.jpg"},
+    {name:"Ravi Krishna",img:"ravikrishna.jpg"},
+    {name:"Jagannath Chandrashekhar",img:"jagannath.jpg"}
 
 ];
 
+/* =========================================================
+   INFLUENCERS
+========================================================= */
 
+const influencerModels = [
+
+    {name:"Mr Faizu",img:"faizu.jpg"},
+    {name:"Asim Riaz",img:"asimriaz.jpg"},
+    {name:"Tarun Kinra",img:"tarunkinra.jpg"}
+
+];
 
 /* =========================================================
    CREATE ACTOR CARDS
@@ -745,6 +770,8 @@ createCards(indianWebActors,"indianweb");
 createCards(englishWebActors,"englishweb");
 
 createCards(southTVActors,"southtv");
+
+createCards(influencerModels,"influencers");
 
 
 
