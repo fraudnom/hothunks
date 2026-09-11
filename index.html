@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Male Model Portfolio</title>
+<title>Men of Screen</title>
 
 <style>
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap');
 
 *{
@@ -20,6 +22,9 @@ body{
     background:linear-gradient(135deg,#edf4ff,#f8fbff);
     color:#18202a;
 }
+
+
+/* ================= HEADER ================= */
 
 header{
     text-align:center;
@@ -36,7 +41,8 @@ header p{
     color:#5f6f86;
 }
 
-/* TABS */
+
+/* ================= TABS ================= */
 
 .tabs{
     display:flex;
@@ -55,7 +61,7 @@ header p{
     font-weight:600;
     cursor:pointer;
     box-shadow:0 6px 18px rgba(0,0,0,.06);
-    transition:.2s;
+    transition:.25s;
 }
 
 .tab-btn:hover{
@@ -67,7 +73,8 @@ header p{
     color:#fff;
 }
 
-/* SEARCH */
+
+/* ================= SEARCH ================= */
 
 .search-box{
     display:flex;
@@ -86,7 +93,8 @@ header p{
     font-size:15px;
 }
 
-/* CONTAINER */
+
+/* ================= CONTAINER ================= */
 
 .container{
     max-width:1350px;
@@ -94,7 +102,8 @@ header p{
     padding:24px;
 }
 
-/* GRID */
+
+/* ================= GRID ================= */
 
 .grid{
     display:grid;
@@ -102,7 +111,8 @@ header p{
     gap:28px;
 }
 
-/* CARD */
+
+/* ================= CARD ================= */
 
 .card{
     background:#fff;
@@ -134,7 +144,8 @@ header p{
     font-size:16px;
 }
 
-/* MODAL */
+
+/* ================= MODAL ================= */
 
 .modal{
     position:fixed;
@@ -151,7 +162,6 @@ header p{
     width:min(350px,92%);
     border-radius:24px;
     overflow:hidden;
-    position:relative;
 }
 
 .modal img{
@@ -168,20 +178,19 @@ header p{
 
 .modal-body h2{
     font-family:'DM Serif Display',serif;
-    font-size:28px;
 }
 
 .close{
-    position:fixed;
+    position:absolute;
     top:18px;
     right:24px;
-    font-size:36px;
+    font-size:30px;
     color:#fff;
     cursor:pointer;
-    z-index:1001;
 }
 
-/* MOBILE */
+
+/* ================= MOBILE ================= */
 
 @media(max-width:600px){
 
@@ -190,7 +199,7 @@ header p{
     }
 
     header h1{
-        font-size:2.3rem;
+        font-size:2.4rem;
     }
 
     .tabs{
@@ -223,80 +232,88 @@ header p{
         font-size:13px;
     }
 }
+
 </style>
+
 </head>
 
 
 <body>
 
+
+<!-- ================= HEADER ================= -->
+
 <header>
+
     <h1>Men of Screen</h1>
-    <p>Television & Movie Portfolio Showcase</p>
+
+    <p>
+        Television & Movie Portfolio Showcase
+    </p>
+
 </header>
 
 
-<!-- =========================
-     CATEGORY TABS
-========================= -->
+
+<!-- ================= CATEGORY BUTTONS ================= -->
 
 <div class="tabs">
 
     <button class="tab-btn active"
-        onclick="showTab('tv',this)">
+            onclick="showTab('tv',this)">
         Television
     </button>
 
     <button class="tab-btn"
-        onclick="showTab('bollywood',this)">
+            onclick="showTab('bollywood',this)">
         Bollywood
     </button>
 
     <button class="tab-btn"
-        onclick="showTab('hollywood',this)">
+            onclick="showTab('hollywood',this)">
         Hollywood
     </button>
 
     <button class="tab-btn"
-        onclick="showTab('tollywood',this)">
+            onclick="showTab('tollywood',this)">
         Tollywood
     </button>
 
     <button class="tab-btn"
-        onclick="showTab('kollywood',this)">
+            onclick="showTab('kollywood',this)">
         Kollywood
     </button>
 
     <button class="tab-btn"
-        onclick="showTab('sandalwood',this)">
+            onclick="showTab('sandalwood',this)">
         Sandalwood
     </button>
 
     <button class="tab-btn"
-        onclick="showTab('mollywood',this)">
+            onclick="showTab('mollywood',this)">
         Mollywood
     </button>
 
     <button class="tab-btn"
-        onclick="showTab('indianweb',this)">
+            onclick="showTab('indianweb',this)">
         Indian Web Series
     </button>
 
     <button class="tab-btn"
-        onclick="showTab('englishweb',this)">
+            onclick="showTab('englishweb',this)">
         English Web Series
     </button>
 
     <button class="tab-btn"
-        onclick="showTab('southtv',this)">
+            onclick="showTab('southtv',this)">
         South Indian TV
     </button>
 
 </div>
 
 
-<!-- =========================
-     SEARCH
-========================= -->
+
+<!-- ================= SEARCH ================= -->
 
 <div class="search-box">
 
@@ -310,53 +327,82 @@ header p{
 </div>
 
 
-<!-- =========================
-     ACTOR CONTAINERS
-========================= -->
+
+<!-- ================= ACTOR GRIDS ================= -->
 
 <div class="container">
 
+
+    <!-- ================= TELEVISION ================= -->
+
     <div id="tv" class="grid"></div>
+
+
+    <!-- ================= BOLLYWOOD ================= -->
 
     <div id="bollywood"
          class="grid"
          style="display:none">
     </div>
 
+
+    <!-- ================= HOLLYWOOD ================= -->
+
     <div id="hollywood"
          class="grid"
          style="display:none">
     </div>
+
+
+    <!-- ================= TOLLYWOOD ================= -->
 
     <div id="tollywood"
          class="grid"
          style="display:none">
     </div>
 
+
+    <!-- ================= KOLLYWOOD ================= -->
+
     <div id="kollywood"
          class="grid"
          style="display:none">
     </div>
+
+
+    <!-- ================= SANDALWOOD ================= -->
 
     <div id="sandalwood"
          class="grid"
          style="display:none">
     </div>
 
+
+    <!-- ================= MOLLYWOOD ================= -->
+
     <div id="mollywood"
          class="grid"
          style="display:none">
     </div>
+
+
+    <!-- ================= INDIAN WEB SERIES ================= -->
 
     <div id="indianweb"
          class="grid"
          style="display:none">
     </div>
 
+
+    <!-- ================= ENGLISH WEB SERIES ================= -->
+
     <div id="englishweb"
          class="grid"
          style="display:none">
     </div>
+
+
+    <!-- ================= SOUTH INDIAN TV ================= -->
 
     <div id="southtv"
          class="grid"
@@ -366,9 +412,8 @@ header p{
 </div>
 
 
-<!-- =========================
-     MODAL
-========================= -->
+
+<!-- ================= MODAL ================= -->
 
 <div class="modal" id="modal">
 
@@ -379,10 +424,14 @@ header p{
 
     <div class="modal-content">
 
-        <img id="modalImg" src="" alt="Actor">
+        <img id="modalImg"
+             src=""
+             alt="Actor">
 
         <div class="modal-body">
+
             <h2 id="modalTitle"></h2>
+
         </div>
 
     </div>
@@ -390,7 +439,9 @@ header p{
 </div>
 
 
+
 <script>
+
 
 /* =========================================================
    TELEVISION
@@ -421,7 +472,7 @@ const tvActors = [
     {name:"Paras Arora",img:"paras.jpeg"},
     {name:"Zayn Ibad Khan",img:"zaynibad.jpeg"},
     {name:"Sehban Azim",img:"sehban.jpg"},
-    {name:"Shaheer Shaikh",img:"shaheer.jpeg"},
+    {name:"Shaheer Sheikh",img:"shaheer.jpeg"},
     {name:"Akshit Sukhija",img:"akshit.jpeg"},
     {name:"Paras Kalnawat",img:"paraskalnawat.jpg"},
     {name:"Vin Rana",img:"vinrana.jpg"},
@@ -445,10 +496,19 @@ const tvActors = [
     {name:"Avinash Sharma",img:"avinashsharma.webp"},
     {name:"Shashank Vyas",img:"shashank.jpeg"},
 
-    /* ADDED */
-    {name:"Abhishek Kumar",img:"abhishekkumar.jpg"}
+    /* NEW TELEVISION ACTORS */
+
+    {name:"Abhishek Kumar",img:"abhishekkumar.heic"},
+    {name:"Vishal Aditya Singh",img:"vishaladitya.heic"},
+    {name:"Karanveer Sharma",img:"karanveer.jpg"},
+    {name:"Rohit Purohit",img:"rohitpurohit.jpg"},
+    {name:"Shoaib Ibrahim",img:"shoaib.jpg"},
+    {name:"Varun Sood",img:"varunsood.jpg"},
+    {name:"Ribhu Mehra",img:"ribbhu.jpg"},
+    {name:"Nishant Malkani",img:"nishant.jpg"}
 
 ];
+
 
 
 /* =========================================================
@@ -467,7 +527,7 @@ const bollywoodActors = [
     {name:"Tiger Shroff",img:"tiger.jpeg"},
     {name:"Ahaan Panday",img:"ahaan.png"},
     {name:"Ishaan Khatter",img:"ishaan.png"},
-    {name:"Aditya Roy Kapoor",img:"adityaroy.jpeg"},
+    {name:"Aditya Roy Kapur",img:"adityaroy.jpeg"},
     {name:"John Abraham",img:"john.jpeg"},
     {name:"Hrithik Roshan",img:"hritik.jpeg"},
     {name:"Ibrahim Ali Khan",img:"ibrahim.jpeg"},
@@ -483,6 +543,7 @@ const bollywoodActors = [
 ];
 
 
+
 /* =========================================================
    HOLLYWOOD
 ========================================================= */
@@ -494,6 +555,7 @@ const hollywoodActors = [
     {name:"Ryan Gosling",img:"ryangosling.jpg"}
 
 ];
+
 
 
 /* =========================================================
@@ -515,6 +577,7 @@ const tollywoodActors = [
 ];
 
 
+
 /* =========================================================
    KOLLYWOOD
 ========================================================= */
@@ -522,10 +585,14 @@ const tollywoodActors = [
 const kollywoodActors = [
 
     {name:"Vishnu Vishal",img:"vishnuvishal.jpg"},
-    {name:"Aarya",img:"aarya.jpeg"},
-    {name:"Suriya",img:"suriya.jpeg"}
+    {name:"Arya",img:"aarya.jpeg"},
+    {name:"Vikran",img:"vikram.jpeg"},
+    {name:"Suriya",img:"suriya.jpeg"},
+    {name:"R. Madhavan",img:"madhavan.jpg"},
+    {name:"Dhruv Vikram",img:"dhruvvikram.jpeg"}
 
 ];
+
 
 
 /* =========================================================
@@ -535,10 +602,12 @@ const kollywoodActors = [
 const sandalwoodActors = [
 
     {name:"Yash",img:"yash.jpeg"},
+    {name:"Rakshit Shetty",img:"rakshitshetty.jpg"},
     {name:"Dileep Shetty",img:"dileep.jpeg"},
     {name:"Sudeep",img:"sudeep.jpeg"}
 
 ];
+
 
 
 /* =========================================================
@@ -547,46 +616,46 @@ const sandalwoodActors = [
 
 const mollywoodActors = [
 
+    {name:"Prithviraj Sukumaran",img:"prithviraj.jpg"},
     {name:"Unni Mukundan",img:"unni.jpeg"}
 
 ];
 
 
+
 /* =========================================================
-   INDIAN WEB SERIES
+   INDIAN WEB SERIES / OTT
 ========================================================= */
 
 const indianWebActors = [
 
     {name:"Rohit Saraf",img:"rohitsaraf.jpg"},
-    {name:"R. Madhavan",img:"madhavan.jpg"},
-    {name:"Siddhant Chaturvedi",img:"siddhantchaturvedi.jpg"},
-    {name:"Varun Sood",img:"varunsood.jpg"},
     {name:"Gashmeer Mahajani",img:"gashmeer.jpg"},
-    {name:"Shoaib Ibrahim",img:"shoaib.jpg"},
-    {name:"Nishant Malkani",img:"nishant.jpg"},
-    {name:"Ribhu Mehra",img:"ribbhu.jpg"},
-    {name:"Naveen Arakkal",img:"naveenarakkal.jpg"}
+    {name:"Ayush Mehra",img:"ayush.heic"},
+    {name:"Siddhant Chaturvedi",img:"sidhantchaturvedi.jpg"}
 
 ];
+
 
 
 /* =========================================================
    ENGLISH WEB SERIES
 ========================================================= */
 
+/*
+   These use your existing Hollywood images so there are
+   no broken-image cards. You can add dedicated web-series
+   images later if you upload them.
+*/
+
 const englishWebActors = [
 
     {name:"Henry Cavill",img:"henry.jpg"},
     {name:"Chris Hemsworth",img:"chrishemsworth.jpg"},
-    {name:"Ryan Gosling",img:"ryangosling.jpg"},
-    {name:"Pedro Pascal",img:"pedropascal.jpg"},
-    {name:"Penn Badgley",img:"pennbadgley.jpg"},
-    {name:"Kit Harington",img:"kitharington.jpg"},
-    {name:"Regé-Jean Page",img:"regejeanpage.jpg"},
-    {name:"Tom Hiddleston",img:"tomhiddleston.jpg"}
+    {name:"Ryan Gosling",img:"ryangosling.jpg"}
 
 ];
+
 
 
 /* =========================================================
@@ -595,35 +664,37 @@ const englishWebActors = [
 
 const southTVActors = [
 
-    {name:"Prithviraj",img:"prithviraj.jpg"},
-    {name:"Karanveer",img:"karanveer.jpg"},
     {name:"Chandan Kumar",img:"chandankumar.jpg"},
-    {name:"Rohit Purohit",img:"rohitpurohit.jpg"},
-    {name:"Rakshit Shetty",img:"rakshitshetty.jpg"}
+    {name:"Naveen Arakkal",img:"naveenarakkal.jpg"}
 
 ];
 
 
+
 /* =========================================================
-   CREATE CARDS
+   CREATE ACTOR CARDS
 ========================================================= */
 
 function createCards(data,id){
 
-    document.getElementById(id).innerHTML = data.map(a => `
+    document.getElementById(id).innerHTML = data.map(actor => `
 
-        <div class="card"
-             onclick="openModal('${a.name}','${a.img}')">
+        <div
+            class="card"
+            onclick="openModal('${actor.name}','${actor.img}')"
+        >
 
             <img
-                src="${a.img}"
-                alt="${a.name}"
+                src="${actor.img}"
+                alt="${actor.name}"
                 loading="lazy"
             >
 
             <div class="card-content">
 
-                <h3>${a.name}</h3>
+                <h3>
+                    ${actor.name}
+                </h3>
 
             </div>
 
@@ -632,6 +703,7 @@ function createCards(data,id){
     `).join('');
 
 }
+
 
 
 /* =========================================================
@@ -659,37 +731,53 @@ createCards(englishWebActors,"englishweb");
 createCards(southTVActors,"southtv");
 
 
+
 /* =========================================================
-   CHANGE TAB
+   SHOW CATEGORY
 ========================================================= */
 
 function showTab(id,btn){
 
+    /* Hide every category */
+
     document
         .querySelectorAll('.grid')
-        .forEach(g => {
-            g.style.display = 'none';
+        .forEach(grid => {
+
+            grid.style.display = 'none';
+
         });
 
+
+    /* Show selected category */
 
     document.getElementById(id).style.display = 'grid';
 
 
+    /* Remove active state */
+
     document
         .querySelectorAll('.tab-btn')
-        .forEach(b => {
-            b.classList.remove('active');
+        .forEach(button => {
+
+            button.classList.remove('active');
+
         });
 
 
+    /* Activate clicked button */
+
     btn.classList.add('active');
 
+
+    /* Clear search */
 
     document.getElementById('searchInput').value = '';
 
     searchActors();
 
 }
+
 
 
 /* =========================================================
@@ -709,6 +797,7 @@ function openModal(name,image){
 }
 
 
+
 /* =========================================================
    CLOSE MODAL
 ========================================================= */
@@ -720,8 +809,9 @@ function closeModal(){
 }
 
 
+
 /* =========================================================
-   CLOSE MODAL WHEN CLICKING OUTSIDE
+   CLOSE MODAL BY CLICKING OUTSIDE
 ========================================================= */
 
 window.onclick = function(event){
@@ -735,8 +825,9 @@ window.onclick = function(event){
 };
 
 
+
 /* =========================================================
-   SEARCH ACTORS
+   SEARCH
 ========================================================= */
 
 function searchActors(){
@@ -749,13 +840,21 @@ function searchActors(){
         .trim();
 
 
+    /* Find currently visible category */
+
     const activeGrid =
         [...document.querySelectorAll('.grid')]
-        .find(g => g.style.display === 'grid');
+        .find(grid => grid.style.display === 'grid');
 
 
-    if(!activeGrid) return;
+    if(!activeGrid){
 
+        return;
+
+    }
+
+
+    /* Search cards */
 
     activeGrid
         .querySelectorAll('.card')
@@ -772,7 +871,9 @@ function searchActors(){
 
                 card.style.display = 'block';
 
-            }else{
+            }
+
+            else{
 
                 card.style.display = 'none';
 
@@ -785,4 +886,5 @@ function searchActors(){
 </script>
 
 </body>
+
 </html>
