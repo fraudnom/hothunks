@@ -319,6 +319,11 @@ header p{
         Influencers
     </button>
 
+    <button class="tab-btn"
+            onclick="showTab('cricketers',this)">
+        Cricketers
+    </button>
+
 </div>
 
 
@@ -433,6 +438,13 @@ header p{
          style="display:none">
     </div>
 
+    <!-- ================= CRICKETERS ================= -->
+
+    <div id="cricketers"
+         class="grid"
+         style="display:none">
+    </div>
+
 </div>
 
 
@@ -538,7 +550,9 @@ const tvActors = [
     {name:"Namish Taneja",img:"namishtaneja.jpg"},
     {name:"Dheeraj Dhoopar",img:"dheeraj.jpg"},
     {name:"Shivin Narang",img:"shivin.jpg"},
-    {name:"Abhishek Bajaj",img:"abhishekbajaj.jpg"}
+    {name:"Abhishek Bajaj",img:"abhishekbajaj.jpg"},
+    {name:"Rahul Vaidya",img:"rahulvaidya.jpg"},
+    {name:"Arpit Ranka",img:"arpitranka.jpg"}
 
 ];
 
@@ -574,7 +588,8 @@ const bollywoodActors = [
     {name:"Vidyut Jammwal",img:"vidyut.jpeg"},
     {name:"Arjun Kapoor",img:"arjunkapoor.jpg"},
     {name:"Arjun Rampal",img:"arjunrampal.jpg"},
-    {name:"Siddhant Chaturvedi",img:"sidhantchaturvedi.jpg"}
+    {name:"Siddhant Chaturvedi",img:"sidhantchaturvedi.jpg"},
+    {name:"Ajay Devgn",img:"ajaydevgn.jpg"}
 
 ];
 
@@ -637,7 +652,8 @@ const kollywoodActors = [
     {name:"Dhruv Vikram",img:"dhruvvikram.jpg"},
     {name:"Siva Karthikeyan",img:"sivakarthikeyan.jpg"},
     {name:"Dhanush",img:"dhanush.jpg"},
-    {name:"Harish Kalyan",img:"harishkalyan.jpg"}
+    {name:"Harish Kalyan",img:"harishkalyan.jpg"},
+    {name:"Ajmal Ameer",img:"ajmal.jpg"}
 
 ];
 
@@ -744,6 +760,19 @@ const influencerModels = [
 ];
 
 /* =========================================================
+   CRICKETERS
+========================================================= */
+
+const cricketMen = [
+
+    {name:"Virat Kohli",img:"virat.jpg"},
+    {name:"KL Rahul",img:"klrahul.jpg"},
+    {name:"Hardik Pandya",img:"hardikpandya.jpg"},
+    {name:"Shubman Gill",imh:"shubmangill.jpg"}
+
+];
+
+/* =========================================================
    CREATE ACTOR CARDS
 ========================================================= */
 
@@ -805,6 +834,8 @@ createCards(englishWebActors,"englishweb");
 createCards(southTVActors,"southtv");
 
 createCards(influencerModels,"influencers");
+
+createCards(cricketMen,"cricketers");
 
 
 
